@@ -1,5 +1,5 @@
 {
-  "name": "RISO \u2014 The Calm Strategist",
+  "name": "RISO — The Calm Strategist",
   "short_name": "RISO",
   "description": "A practical personal development and progression system.",
   "start_url": "./",
@@ -9,9 +9,9 @@
   "theme_color": "#071321",
   "icons": [
     {
-      "src": "./icon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
+      "src": "./ris1.png",
+      "sizes": "192x192 512x512",
+      "type": "image/png",
       "purpose": "any"
     }
   ]
