@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#071321">
+<meta name="description" content="RISO — a calm, practical personal development system.">
+<link rel="manifest" href="./manifest.webmanifest">
+<title>RISO V2.0 — The Calm Strategist</title>
+<style>
+:root{--bg:#06101d;--panel:#0d1d30;--panel2:#10263d;--line:#25435f;--blue:#2998f3;--cyan:#78e7ff;--text:#edf7ff;--muted:#9bb0c4;--gold:#f2cc75;--green:#6fe0ad;--red:#ff8e8e;--shadow:0 12px 36px #0005}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 50% -15%,#173e64 0%,#071321 48%,#050c16 100%);color:var(--text);font:15px/1.5 system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh}button,input,select,textarea{font:inherit}button{cursor:pointer;color:var(--text);background:#123b5e;border:1px solid #34729a;border-radius:11px;padding:10px 13px;font-weight:650}button:hover{filter:brightness(1.12)}button:disabled{opacity:.45;cursor:not-allowed}.primary{background:linear-gradient(100deg,#176cc0,#138ba8);border-color:#398fc1}.ghost{background:transparent;border-color:var(--line)}.danger{background:#48232b;border-color:#91434e}.shell{max-width:1180px;margin:auto;padding:0 15px 105px}.top{max-width:1180px;margin:auto;padding:17px 15px 10px;display:flex;justify-content:space-between;align-items:center;gap:12px}.brand{font-size:12px;letter-spacing:.24em;color:var(--cyan);font-weight:850}.version{color:var(--muted);font-size:12px}.clock{text-align:right;background:#0a1a2a;border:1px solid var(--line);border-radius:12px;padding:7px 11px;min-width:132px}.clock b{display:block;color:var(--cyan);font-size:18px;font-variant-numeric:tabular-nums}.clock small{color:var(--muted)}.hero{padding:20px;border:1px solid #2a5275;border-radius:20px;background:linear-gradient(135deg,#12314e,#0b1b2d 72%);box-shadow:var(--shadow);margin:8px 0 14px}.herohead{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.hero h1{font-size:clamp(22px,4vw,30px);margin:0}.hero p{color:var(--muted);margin:4px 0 12px}.rank{display:inline-flex;border:1px solid #397eae;border-radius:30px;padding:4px 10px;color:var(--cyan);font-size:12px}.level{text-align:right}.level strong{font-size:32px;color:var(--cyan);display:block;line-height:1}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:15px}.stat{background:#071827;border:1px solid var(--line);padding:11px;border-radius:12px}.stat small{display:block;color:var(--muted);font-size:11px}.stat b{font-size:22px;color:var(--cyan)}.bar{height:8px;background:#20384f;border-radius:20px;overflow:hidden;margin:9px 0}.bar span{display:block;height:100%;background:linear-gradient(90deg,#2789ee,#78e7ff);border-radius:20px}.muted,small{color:var(--muted)}.layout{display:grid;grid-template-columns:minmax(0,1fr);gap:13px}.panel{background:linear-gradient(145deg,#10253b,#0a1929);border:1px solid var(--line);border-radius:17px;padding:16px;margin:12px 0;box-shadow:0 8px 25px #0002}.panel h2{font-size:18px;margin:0 0 12px}.panel h3{font-size:15px;margin:0 0 8px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.tile,.card{background:#091a2a;border:1px solid var(--line);border-radius:13px;padding:13px;min-width:0}.tile h3,.card h3{margin:0 0 5px;font-size:15px}.tile p,.card p{margin:0 0 10px;color:var(--muted);font-size:13px}.row{display:flex;align-items:center;gap:9px;flex-wrap:wrap}.row>*{flex:1}.row .fit{flex:0 0 auto}.field{margin:10px 0}.field label{display:block;font-size:12px;color:var(--muted);margin-bottom:4px}input,select,textarea{width:100%;background:#071625;color:var(--text);border:1px solid #2a4966;border-radius:10px;padding:10px;margin:2px 0 5px}textarea{resize:vertical;min-height:75px}input[type=checkbox]{width:auto;accent-color:var(--cyan)}.mission{display:flex;align-items:flex-start;gap:10px;padding:11px 0;border-bottom:1px solid #1d354b}.mission:last-child{border:0}.mission input{margin:4px 0}.mission .details{flex:1}.mission .details b{display:block}.xp{color:var(--gold);font-size:12px;white-space:nowrap}.tag{display:inline-block;border:1px solid #315a79;color:var(--cyan);border-radius:30px;padding:2px 8px;font-size:11px;margin:2px}.sectionhead{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px}.sectionhead h2{margin:0}.page{display:none}.page.active{display:block}.nav{position:fixed;z-index:20;bottom:0;left:0;right:0;display:flex;justify-content:center;gap:3px;padding:7px 6px calc(7px + env(safe-area-inset-bottom));background:#061321ed;border-top:1px solid #294862;backdrop-filter:blur(16px)}.nav button{flex:1;max-width:150px;border:0;background:transparent;color:var(--muted);font-size:10px;padding:6px 2px}.nav button span{display:block;font-size:19px;line-height:1.2}.nav button.active{background:#12324c;color:var(--cyan);border-radius:10px}.listrow{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid #1c344b}.listrow:last-child{border:0}.attr{margin:14px 0}.attrhead{display:flex;justify-content:space-between;gap:8px}.calendar{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}.dayname,.day{padding:8px 2px;text-align:center;font-size:12px}.dayname{color:var(--muted)}.day{min-height:39px;background:#091a2a;border:1px solid #25425b;border-radius:8px}.day.today{border-color:var(--cyan);color:var(--cyan)}.day.selected{background:#16527d;color:white}.day.empty{background:transparent;border:0}.notice{padding:11px;border-radius:11px;background:#0a2638;border:1px solid #28506b;color:#c6eaff;font-size:13px}.warning{background:#302817;border-color:#725a2c;color:#f7dfaa}.exercise{background:#091a2a;border:1px solid var(--line);border-radius:13px;padding:13px}.exercise h3{margin:0 0 5px}.exercise p{font-size:13px;color:var(--muted)}.timer{font-size:42px;font-weight:800;color:var(--cyan);font-variant-numeric:tabular-nums;text-align:center;margin:10px}.empty{color:var(--muted);font-size:13px;padding:12px 0}footer{text-align:center;color:var(--muted);font-size:11px;padding:18px 0}.hidden{display:none!important}
+@media(min-width:800px){.shell{padding-bottom:35px}.layout{grid-template-columns:1.15fr .85fr}.nav{position:sticky;top:0;bottom:auto;border:1px solid var(--line);border-radius:14px;margin:8px auto 14px;max-width:850px}.nav button{font-size:12px}.nav button span{display:inline-block;margin-right:5px}.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.stats{max-width:600px}}
+@media(max-width:390px){.nav button{font-size:9px}.nav button span{font-size:17px}.hero{padding:15px}.stat{padding:8px}.stat b{font-size:19px}}
+</style>
+</head>
+<body>
+<header class="top"><div><div class="brand">R I S O // PERSONAL SYSTEM</div><div class="version">THE CALM STRATEGIST · V2.0</div></div><div class="clock"><b id="liveTime">--:--:--</b><small id="liveDate">Loading…</small></div></header>
+<nav class="nav" aria-label="Main navigation">
+<button class="active" data-page="home" onclick="navigate('home')"><span>⌂</span>Home</button>
+<button data-page="sessions" onclick="navigate('sessions')"><span>◉</span>Sessions</button>
+<button data-page="academy" onclick="navigate('academy')"><span>▣</span>Academy</button>
+<button data-page="scheduler" onclick="navigate('scheduler')"><span>◷</span>Plan</button>
+<button data-page="progress" onclick="navigate('progress')"><span>↗</span>Progress</button>
+<button data-page="more" onclick="navigate('more')"><span>•••</span>More</button>
+</nav>
+<main class="shell">
+<section id="page-home" class="page active">
+<div class="hero"><div class="herohead"><div><h1 id="greeting">WELCOME BACK, PLAYER</h1><p>Build capability. Keep composure. Create your own aura.</p><span class="rank" id="rank">E-RANK</span></div><div class="level"><small>LEVEL</small><strong id="level">1</strong></div></div>
+<div class="stats"><div class="stat"><small>TOTAL XP</small><b id="totalXP">0</b></div><div class="stat"><small>STREAK</small><b id="streak">0</b></div><div class="stat"><small>TODAY</small><b id="missionCount">0/7</b></div></div><div class="bar"><span id="levelBar" style="width:0%"></span></div><small id="levelText">0 / 100 XP to next level</small></div>
+<div class="layout"><div>
+<section class="panel"><div class="sectionhead"><h2>Today's missions</h2><button class="ghost" onclick="navigate('scheduler')">Plan day →</button></div><div id="missionList"></div><div class="field"><label for="customMissionInput">Add a personal daily mission</label><div class="row"><input id="customMissionInput" placeholder="e.g. Revise Python for 20 minutes"><button class="fit" onclick="addCustomMission()">Add</button></div></div></section>
+<section class="panel"><h2>Today's plan</h2><div id="todayPlan" class="empty">Set your schedule to generate a practical daily plan.</div><button class="ghost" onclick="navigate('scheduler')">Open scheduler</button></section>
+</div><div>
+<section class="panel"><h2>Quick access</h2><div class="grid">
+<div class="tile"><h3>🧠 Mind & Strategy</h3><p>Reasoning, planning and focus.</p><button onclick="navigate('academy')">Open academy</button></div>
+<div class="tile"><h3>🏋️ Fitness</h3><p>Beginner-safe strength and stamina.</p><button onclick="navigate('academy')">Training room</button></div>
+<div class="tile"><h3>📅 Calendar</h3><p>Notes and date history.</p><button onclick="navigate('more','calendar')">Open calendar</button></div></div></section>
+<section class="panel"><h2>Daily check-in</h2><p class="muted">A short review is more useful than pretending every day went perfectly.</p><button class="primary" onclick="navigate('more','evaluation')">Evaluate today</button></section>
+</div></div>
+</section>
+
+<section id="page-sessions" class="page">
+<div class="panel"><h2>Sessions</h2><p class="muted">Log one meaningful session per category per day. RISO limits repeat rewards to prevent XP farming.</p><div class="grid" id="sessionCards"></div></div>
+<div class="panel"><h2>Focus timer</h2><p class="muted">Complete a 25-minute focus block. XP is awarded only when the timer finishes.</p><div class="timer" id="focusClock">25:00</div><div class="row"><button class="primary" onclick="startFocus()">Start / Resume</button><button class="ghost" onclick="resetFocus()">Reset</button></div><p id="focusStatus" class="muted">Ready when you are.</p></div>
+</section>
+
+<section id="page-academy" class="page">
+<div class="panel"><h2>RISO Academy</h2><p class="muted">Train useful capabilities through small, measurable exercises. This is educational guidance, not professional medical or martial-arts instruction.</p><div class="grid">
+<div class="tile"><h3>🧠 Intelligence</h3><p>Recall, learning and logical reasoning.</p><button onclick="showAcademy('intelligence')">Enter</button></div>
+<div class="tile"><h3>♟ Strategic thinking</h3><p>Options, risk, consequences and decisions.</p><button onclick="showAcademy('strategy')">Enter</button></div>
+<div class="tile"><h3>💪 Fitness</h3><p>Strength, stamina, mobility and recovery.</p><button onclick="showAcademy('fitness')">Enter</button></div>
+<div class="tile"><h3>🛡 Safety awareness</h3><p>Boundaries, de-escalation and escape.</p><button onclick="showAcademy('safety')">Enter</button></div>
+<div class="tile"><h3>🗣 Communication</h3><p>Listening, clarity and composure.</p><button onclick="showAcademy('communication')">Enter</button></div>
+<div class="tile"><h3>⏱ Discipline</h3><p>Focus, routines and follow-through.</p><button onclick="showAcademy('discipline')">Enter</button></div>
+</div><div id="academyDetail" class="panel hidden"></div></div>
+</section>
+
+<section id="page-scheduler" class="page">
+<div class="panel"><h2>Daily scheduler</h2><p class="muted">This is a rule-based planner, not AI. It protects your fixed commitments and sleep, then places flexible tasks in the remaining time.</p>
+<div class="grid">
+<div class="field"><label for="wakeTime">Wake-up time</label><input id="wakeTime" type="time" value="06:00"></div>
+<div class="field"><label for="sleepTime">Sleep time</label><input id="sleepTime" type="time" value="22:30"></div>
+<div class="field"><label for="collegeStart">Fixed commitment starts</label><input id="collegeStart" type="time" value="09:00"></div>
+<div class="field"><label for="collegeEnd">Fixed commitment ends</label><input id="collegeEnd" type="time" value="17:00"></div>
+</div><div class="field"><label for="commitmentName">Commitment name</label><input id="commitmentName" value="College / work"></div>
+<div class="field"><label for="extraCommitments">Other fixed commitments (one per line: HH:MM-HH:MM Description)</label><textarea id="extraCommitments" placeholder="18:00-18:30 Travel&#10;20:00-20:30 Family time"></textarea></div>
+<div class="grid"><div class="field"><label for="studyMins">Study minutes</label><input id="studyMins" type="number" min="0" max="600" value="90"></div><div class="field"><label for="skillMins">Skill learning minutes</label><input id="skillMins" type="number" min="0" max="300" value="30"></div><div class="field"><label for="fitnessMins">Fitness minutes</label><input id="fitnessMins" type="number" min="0" max="180" value="40"></div><div class="field"><label for="readingMins">Reading minutes</label><input id="readingMins" type="number" min="0" max="180" value="15"></div></div>
+<div class="row"><button class="primary" onclick="saveScheduleSettings()">Save settings</button><button onclick="generatePlan()">Generate / re-plan today</button></div>
+<div class="notice" style="margin-top:12px">If you wake late or miss a task, use “Re-plan from now”. Fixed commitments and your sleep window are treated as protected time. If there is not enough room, RISO marks tasks as unscheduled instead of stealing sleep.</div>
+</div>
+<div class="panel"><div class="sectionhead"><h2>Your daily timeline</h2><button class="ghost" onclick="replanNow()">Re-plan from now</button></div><div id="planList" class="empty">Generate a plan to see your timeline.</div><div id="unscheduled"></div></div>
+</section>
+
+<section id="page-progress" class="page">
+<div class="panel"><h2>Player progression</h2><div class="stats"><div class="stat"><small>TOTAL XP</small><b id="progressXP">0</b></div><div class="stat"><small>LEVEL</small><b id="progressLevel">1</b></div><div class="stat"><small>RANK</small><b id="progressRank">E</b></div></div><h3 style="margin-top:18px">Independent attributes</h3><div id="attributeList"></div></div>
+<div class="panel"><h2>Achievements & challenges</h2><div id="achievementList"></div><h3 style="margin-top:18px">Weekly challenge</h3><div id="weeklyChallenge"></div><h3 style="margin-top:18px">Boss mission</h3><div id="bossMission"></div></div>
+<div class="panel"><h2>Activity history</h2><div id="activityHistory"></div><button class="ghost" onclick="monthlyReport()">View monthly report</button><div id="monthlyReport" class="muted"></div></div>
+</section>
+
+<section id="page-more" class="page">
+<div class="panel"><h2>More RISO tools</h2><div class="grid">
+<div class="tile"><h3>🎯 Targets & aims</h3><p>Manage your longer-term direction.</p><button onclick="showMore('targets')">Open</button></div>
+<div class="tile"><h3>📅 Calendar</h3><p>Notes for specific dates.</p><button onclick="showMore('calendar')">Open</button></div>
+<div class="tile"><h3>📝 Daily evaluation</h3><p>Review what happened and choose tomorrow's priority.</p><button onclick="showMore('evaluation')">Open</button></div>
+<div class="tile"><h3>♙ Profile</h3><p>Personal identity and preferences.</p><button onclick="showMore('profile')">Open</button></div>
+<div class="tile"><h3>💾 Backup & restore</h3><p>Export or restore your RISO data.</p><button onclick="showMore('data')">Open</button></div>
+</div><div id="moreDetail" class="panel hidden"></div></div>
+</section>
+<footer>RISO V2.0 · Consistency over intensity · Your data stays in this browser unless you export it.</footer>
+</main>
+<script>
+"use strict";
+const STORAGE_KEY="riso12", V2_KEY="riso20";
+const ATTRS=["Intelligence","Strategic Thinking","Discipline","Physical Strength","Stamina","Communication","Composure"];
+const MISSIONS=[
+{id:"learn",title:"Intelligence: learn for 20 minutes",xp:20,attr:"Intelligence"},
+{id:"strategy",title:"Strategy: complete one decision drill",xp:15,attr:"Strategic Thinking"},
+{id:"discipline",title:"Discipline: finish one planned task",xp:15,attr:"Discipline"},
+{id:"fitness",title:"Fitness: walk or complete a beginner workout",xp:20,attr:"Physical Strength"},
+{id:"safety",title:"Safety: practise awareness and boundaries",xp:10,attr:"Composure"},
+{id:"communication",title:"Communication: ask and listen thoughtfully",xp:10,attr:"Communication"},
+{id:"reflection",title:"Composure: reflect before reacting",xp:10,attr:"Composure"}
+];
+const SESSION_DEFS=[
+["Intelligence","🧠","Read, recall, learn or solve a problem.","Intelligence"],
+["Strategic Thinking","♟","Plan options, risks and likely outcomes.","Strategic Thinking"],
+["Discipline","⏱","Complete a focused task or routine.","Discipline"],
+["Physical Strength","💪","Complete safe strength or mobility training.","Physical Strength"],
+["Stamina","🏃","Walk, run or perform appropriate endurance work.","Stamina"],
+["Communication","🗣","Practise listening, speaking or social confidence.","Communication"],
+["Composure","🌊","Pause, reflect and respond deliberately.","Composure"]
+];
+let state, currentPage="home", selectedDate=new Date(), focusTimer=null, focusRemaining=1500;
+function dayKey(d=new Date()){return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`}
+function defaultState(){return {version:2,xp:0,streak:0,lastDay:"",name:"Player",aim:"Become capable, calm and self-reliant",targets:["Build consistent daily discipline","Improve critical thinking","Build safe baseline fitness","Practise communication and composure"],custom:[],daily:{},attributes:Object.fromEntries(ATTRS.map(a=>[a,0])),history:[],notes:{},evaluations:{},schedule:{wake:"06:00",sleep:"22:30",commitStart:"09:00",commitEnd:"17:00",commitName:"College / work",extra:"",study:90,skill:30,fitness:40,reading:15},plans:{},createdAt:new Date().toISOString()};}
+function safeParse(raw){try{return JSON.parse(raw)}catch(e){return null}}
+function loadState(){
+ const v2=safeParse(localStorage.getItem(V2_KEY)||"null");
+ if(v2&&v2.version===2)return normalize(v2);
+ const old=safeParse(localStorage.getItem(STORAGE_KEY)||"null");
+ let s=defaultState();
+ if(old&&typeof old==="object"){
+  s.xp=Number(old.xp)||0;s.streak=Number(old.streak)||0;s.lastDay=old.lastDay||"";
+  s.name=old.name||"Player";s.aim=old.aim||s.aim;s.targets=Array.isArray(old.targets)?old.targets:s.targets;
+  s.custom=Array.isArray(old.custom)?old.custom:[];
+  if(old.notes&&typeof old.notes==="object")s.notes=old.notes;
+  // Preserve the old app's current-day completed missions without awarding XP a second time.
+  const oldDone=Array.isArray(old.done)?old.done:[];
+  const migratedDone=oldDone.map(i=>MISSIONS[Number(i)]?.id||`legacy-${i}`);
+  s.daily[dayKey()]={done:migratedDone,rewarded:migratedDone.map(id=>id.startsWith("legacy-")?id:`mission-${id}-${dayKey()}`),sessions:[]};
+  // Old progress had no reliable per-attribute ledger, so do not fabricate attribute history.
+  s.migration={from:"RISO V1.2",migratedAt:new Date().toISOString(),legacyDoneCount:oldDone.length,legacyXP:s.xp};
+ }
+ return normalize(s);
+}
+function normalize(s){let d=defaultState();return {...d,...s,attributes:{...d.attributes,...(s.attributes||{})},daily:s.daily||{},history:Array.isArray(s.history)?s.history:[],notes:s.notes||{},evaluations:s.evaluations||{},plans:s.plans||{},schedule:{...d.schedule,...(s.schedule||{})},targets:Array.isArray(s.targets)?s.targets:d.targets,custom:Array.isArray(s.custom)?s.custom:[]};}
+state=loadState();
+function save(){localStorage.setItem(V2_KEY,JSON.stringify(state));}
+function escapeHTML(x){return String(x??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+function levelInfo(xp){let level=Math.floor(Math.max(0,xp)/100)+1,into=Math.max(0,xp)%100;let ranks=["E-RANK","D-RANK","C-RANK","B-RANK","A-RANK","S-RANK","SS-RANK"];return {level,into,rank:ranks[Math.min(ranks.length-1,Math.floor((level-1)/5))]};}
+function todayRecord(){let k=dayKey();if(!state.daily[k])state.daily[k]={done:[],rewarded:[],sessions:[]};return state.daily[k];}
+function recordActivity(label,attr,xp,kind="session",id=null){
+ let today=todayRecord();let key=id||`${kind}-${label.toLowerCase().replace(/[^a-z0-9]+/g,"-")}-${dayKey()}`;
+ if(state.history.some(h=>h.id===key)){alert("This activity has already earned its reward today.");return false;}
+ state.xp+=xp;if(attr&&state.attributes[attr]!==undefined)state.attributes[attr]+=xp;
+ const item={id:key,date:dayKey(),label,attribute:attr,xp,kind,at:new Date().toISOString()};
+ state.history.unshift(item);today.sessions.push(key);save();renderAll();return true;
+}
+function getMissions(){return MISSIONS.concat(state.custom.map((title,i)=>({id:`custom-${i}`,title,xp:10,attr:"Discipline"})));}
+function addCustomMission(){let el=document.getElementById("customMissionInput"),value=el?.value.trim();if(!value)return;state.custom.push(value);save();renderHome();}
+function completeMission(id){
+ let m=getMissions().find(x=>x.id===id);if(!m)return;let r=todayRecord();
+ if(r.done.includes(id))return;
+ r.done.push(id);if(!r.rewarded.includes(id)){r.rewarded.push(id);recordActivity(m.title,m.attr,m.xp,"mission",`mission-${id}-${dayKey()}`);}
+ else{save();renderAll();}
+}
+function undoMission(id){alert("Completed missions cannot be unchecked because XP has already been earned. If you made a mistake, leave the record intact; RISO keeps an honest activity history.");}
+function renderHome(){
+ let info=levelInfo(state.xp),allMissions=getMissions(),done=allMissions.filter(m=>todayRecord().done.includes(m.id)).length;
+ document.getElementById("greeting").textContent=`WELCOME BACK, ${(state.name||"PLAYER").toUpperCase()}`;
+ document.getElementById("rank").textContent=info.rank;document.getElementById("level").textContent=info.level;
+ document.getElementById("totalXP").textContent=state.xp;document.getElementById("streak").textContent=state.streak||0;
+ document.getElementById("missionCount").textContent=`${done}/${allMissions.length}`;
+ document.getElementById("levelBar").style.width=info.into+"%";document.getElementById("levelText").textContent=`${info.into} / 100 XP to next level`;
+ document.getElementById("missionList").innerHTML=allMissions.map(m=>`<div class="mission"><input type="checkbox" ${todayRecord().done.includes(m.id)?"checked":""} ${todayRecord().done.includes(m.id)?"disabled":""} onchange="completeMission('${m.id}')"><div class="details"><b>${escapeHTML(m.title)}</b><small>${todayRecord().done.includes(m.id)?"Completed":"Daily quest"} · ${m.attr}</small></div><span class="xp">+${m.xp} XP</span></div>`).join("");
+ const p=state.plans[dayKey()];document.getElementById("todayPlan").innerHTML=p&&p.items.length?p.items.slice(0,5).map(x=>`<div class="listrow"><span><b>${escapeHTML(x.start)}–${escapeHTML(x.end)}</b> ${escapeHTML(x.title)}</span><small>${escapeHTML(x.type)}</small></div>`).join("")+(p.items.length>5?`<small>+ ${p.items.length-5} more scheduled items</small>`:""):"No plan generated for today yet.";
+}
+function navigate(page,sub){currentPage=page;document.querySelectorAll(".page").forEach(p=>p.classList.toggle("active",p.id===`page-${page}`));document.querySelectorAll(".nav button").forEach(b=>b.classList.toggle("active",b.dataset.page===page));window.scrollTo({top:0,behavior:"smooth"});if(page==="sessions")renderSessions();if(page==="progress")renderProgress();if(page==="scheduler")loadScheduleForm();if(page==="more"&&sub)showMore(sub);}
+function tick(){let d=new Date();document.getElementById("liveTime").textContent=d.toLocaleTimeString([],{hour:"2-digit",minute:"2-digit",second:"2-digit"});document.getElementById("liveDate").textContent=d.toLocaleDateString([],{weekday:"short",day:"numeric",month:"short",year:"numeric"});if(dayKey()!==state.lastSeenDay){state.lastSeenDay=dayKey();save();renderHome();}}
+function renderAll(){renderHome();if(currentPage==="progress")renderProgress();if(currentPage==="sessions")renderSessions();if(currentPage==="scheduler")renderPlan();}
+function renderSessions(){document.getElementById("sessionCards").innerHTML=SESSION_DEFS.map(([name,icon,desc,attr])=>{let logged=state.history.some(h=>h.date===dayKey()&&h.kind==="session"&&h.attribute===attr);return `<div class="tile"><h3>${icon} ${name}</h3><p>${desc}</p><span class="tag">${logged?"Logged today":"Not logged today"}</span><button style="width:100%;margin-top:9px" ${logged?"disabled":""} onclick="logSession('${attr}')">${logged?"Reward claimed":"Log session · +10 XP"}</button></div>`}).join("");}
+function logSession(attr){recordActivity(`${attr} practice`,attr,10,"session",`session-${attr}-${dayKey()}`);renderSessions();}
+function startFocus(){if(focusTimer)return;document.getElementById("focusStatus").textContent="Focus session running. Keep this tab open.";focusTimer=setInterval(()=>{focusRemaining--;document.getElementById("focusClock").textContent=`${String(Math.floor(focusRemaining/60)).padStart(2,"0")}:${String(focusRemaining%60).padStart(2,"0")}`;if(focusRemaining<=0){clearInterval(focusTimer);focusTimer=null;focusRemaining=1500;recordActivity("Completed 25-minute focus block","Discipline",15,"focus",`focus-${dayKey()}-${Date.now()}`);document.getElementById("focusStatus").textContent="Completed. +15 XP awarded.";document.getElementById("focusClock").textContent="25:00";}},1000);}
+function resetFocus(){clearInterval(focusTimer);focusTimer=null;focusRemaining=1500;document.getElementById("focusClock").textContent="25:00";document.getElementById("focusStatus").textContent="Timer reset.";}
+const ACADEMY={
+intelligence:{title:"Intelligence Academy",intro:"Train attention, memory and reasoning. Measure the process, not just time spent.",drills:[["Active recall","Read a small section, close it, then write five facts from memory."],["Memory ladder","Memorise 5–7 unrelated words. Recall them after five minutes."],["Logical reasoning","Solve one logic or mathematics problem. Explain why the answer works."],["Teach-back","Explain a concept aloud in simple language without looking at notes."]]},
+strategy:{title:"Strategy Academy",intro:"Good decisions compare options, constraints, risks and consequences.",drills:[["Three options","Write three possible actions before choosing one."],["Risk check","List the best outcome, worst outcome and most likely outcome."],["Second-order thinking","Ask: what happens next if this decision works? What if it fails?"],["Decision review","After acting, compare the result with your prediction."]]},
+fitness:{title:"Fitness Academy",intro:"Use gradual progression. A routine should fit your current ability, not your ego.",drills:[["Warm-up","Walk easily for 3–5 minutes, then move joints gently before exercise."],["Push-ups","Start with wall or incline push-ups if floor push-ups are too difficult. Keep a controlled body line."],["Squats","Use a comfortable depth. Keep feet stable and knees tracking in the direction of toes."],["Stamina","Begin with brisk walking. Add short easy jog intervals only when recovery is good."],["Recovery","Take rest days. Stop for sharp pain, dizziness, chest pain or unusual breathlessness and seek appropriate help."]]},
+safety:{title:"Personal safety academy",intro:"The priority is avoiding danger and getting away—not winning a fight.",drills:[["Situational awareness","Notice exits, people approaching and changes in your surroundings."],["Distance and boundaries","Keep space, use a clear voice and move toward safer public areas."],["De-escalation","Avoid insults and challenges. Use calm, brief language and disengage."],["Escape plan","Identify an exit and a person or service you can contact for help."],["Supervised practice","Learn stance and footwork with a qualified instructor. Do not practise dangerous techniques on friends."]]},
+communication:{title:"Communication Academy",intro:"Strong communication is clear, respectful and attentive.",drills:[["Open question","Ask a question that cannot be answered only with yes or no."],["Listen fully","Do not interrupt. Summarise what the other person meant before replying."],["Clear explanation","Explain one idea in 30 seconds using simple words."],["Conversation review","Notice what helped the conversation flow and what shut it down."]]},
+discipline:{title:"Discipline Academy",intro:"Reduce friction and make the next useful action obvious.",drills:[["Two-minute start","Begin the task for just two minutes. Continue if momentum appears."],["Environment reset","Put your phone away and prepare only the material needed for one task."],["Single-task block","Work for 25 minutes on one defined outcome."],["Implementation plan","Write: At [time] in [place], I will do [specific action]."]]}
+};
+function showAcademy(key){let a=ACADEMY[key];let box=document.getElementById("academyDetail");box.classList.remove("hidden");box.innerHTML=`<div class="sectionhead"><h2>${a.title}</h2><button class="ghost" onclick="document.getElementById('academyDetail').classList.add('hidden')">Close</button></div><p class="muted">${a.intro}</p>${a.drills.map((d,i)=>`<div class="listrow"><div><b>${d[0]}</b><p class="muted">${d[1]}</p></div></div>`).join("")}<button class="primary" onclick="recordActivity('${a.title} practice','${key==='intelligence'?'Intelligence':key==='strategy'?'Strategic Thinking':key==='fitness'?'Physical Strength':key==='safety'?'Composure':key==='communication'?'Communication':'Discipline'}',10,'academy','academy-${key}-${dayKey()}')">Log academy practice · +10 XP</button>`;box.scrollIntoView({behavior:"smooth",block:"start"});}
+function loadScheduleForm(){let s=state.schedule;for(let [id,key] of [["wakeTime","wake"],["sleepTime","sleep"],["collegeStart","commitStart"],["collegeEnd","commitEnd"],["commitmentName","commitName"],["extraCommitments","extra"],["studyMins","study"],["skillMins","skill"],["fitnessMins","fitness"],["readingMins","reading"]]){let el=document.getElementById(id);if(el)el.value=s[key]??"";}renderPlan();}
+function saveScheduleSettings(silent=false){let s=state.schedule;for(let [id,key] of [["wakeTime","wake"],["sleepTime","sleep"],["collegeStart","commitStart"],["collegeEnd","commitEnd"],["commitmentName","commitName"],["extraCommitments","extra"]])s[key]=document.getElementById(id).value;for(let [id,key] of [["studyMins","study"],["skillMins","skill"],["fitnessMins","fitness"],["readingMins","reading"]])s[key]=Math.max(0,Math.min(600,Number(document.getElementById(id).value)||0));save();if(!silent)alert("Schedule settings saved.");}
+function toMin(t){let [h,m]=String(t||"00:00").split(":").map(Number);return h*60+m;}
+function fmtMin(n){n=(n+1440)%1440;return `${String(Math.floor(n/60)).padStart(2,"0")}:${String(n%60).padStart(2,"0")}`;}
+function generatePlan(fromNow=false){
+ saveScheduleSettings(true);let s=state.schedule,k=dayKey(),now=new Date(),start=fromNow?now.getHours()*60+now.getMinutes():toMin(s.wake),end=toMin(s.sleep);if(end<=start)end+=1440;
+ let fixed=[];let cs=toMin(s.commitStart),ce=toMin(s.commitEnd);if(ce>cs)fixed.push({start:cs,end:ce,title:s.commitName||"Fixed commitment",type:"Fixed"});
+ (s.extra||"").split("\n").forEach(line=>{let m=line.trim().match(/^(\d{1,2}:\d{2})\s*-\s*(\d{1,2}:\d{2})\s+(.+)$/);if(m){let a=toMin(m[1]),b=toMin(m[2]);if(b>a)fixed.push({start:a,end:b,title:m[3],type:"Fixed"});}});
+ let occupied=fixed.map(x=>({...x}));let tasks=[["Morning routine",25,"Routine"],["Fitness",s.fitness,"Fitness"],["Study block 1",Math.ceil(s.study/2),"Study"],["Skill development",s.skill,"Skill"],["Reading",s.reading,"Reading"],["Study block 2",Math.floor(s.study/2),"Study"],["Meals and breaks",60,"Break"]];
+ tasks=tasks.filter(t=>t[1]>0);let items=[...fixed];
+ // Place flexible tasks into available gaps; each task is split only when a suitable gap exists.
+ let cursor=start;
+ for(let [title,duration,type] of tasks){let placed=false;let blocks=occupied.slice().sort((a,b)=>a.start-b.start);let candidates=[];let pos=start;for(let b of blocks){if(b.start>pos)candidates.push([pos,b.start]);pos=Math.max(pos,b.end);}if(pos<end)candidates.push([pos,end]);
+  for(let [a,b] of candidates){let slotStart=Math.max(a,cursor);if(b-slotStart>=duration){items.push({start:slotStart,end:slotStart+duration,title,type});occupied.push({start:slotStart,end:slotStart+duration});cursor=slotStart+duration;placed=true;break;}}
+  if(!placed)(state.plans[k]??={items:[],unscheduled:[]}).unscheduled.push(`${title} (${duration} min)`);
+ }
+ // Sort and remove stale unscheduled entries on a fresh generation.
+ let unique=[...new Map(items.map(x=>[`${x.start}-${x.end}-${x.title}`,x])).values()].sort((a,b)=>a.start-b.start);
+ let unscheduled=tasks.filter(t=>!unique.some(x=>x.title===t[0])).map(t=>`${t[0]} (${t[1]} min)`);
+ state.plans[k]={items:unique,unscheduled,generatedAt:new Date().toISOString(),replanned:fromNow};
+ save();renderPlan();renderHome();
+}
+function replanNow(){generatePlan(true);alert("Plan rebuilt from the current time. Fixed commitments remain protected.");}
+function renderPlan(){let p=state.plans[dayKey()];let box=document.getElementById("planList"),u=document.getElementById("unscheduled");if(!p||!p.items.length){box.innerHTML='<div class="empty">No plan generated yet.</div>';u.innerHTML="";return;}box.innerHTML=p.items.map(x=>`<div class="listrow"><div><b>${escapeHTML(fmtMin(x.start))} – ${escapeHTML(fmtMin(x.end))}</b><br>${escapeHTML(x.title)}</div><span class="tag">${escapeHTML(x.type)}</span></div>`).join("");u.innerHTML=p.unscheduled?.length?`<div class="notice warning" style="margin-top:12px"><b>Not scheduled — time was insufficient:</b><br>${p.unscheduled.map(escapeHTML).join("<br>")}</div>`:"<p class='muted'>All requested tasks fit in the available time.</p>";}
+function renderProgress(){
+ let info=levelInfo(state.xp);document.getElementById("progressXP").textContent=state.xp;document.getElementById("progressLevel").textContent=info.level;document.getElementById("progressRank").textContent=info.rank;
+ document.getElementById("attributeList").innerHTML=ATTRS.map(a=>{let xp=state.attributes[a]||0,l=levelInfo(xp);return `<div class="attr"><div class="attrhead"><b>${a}</b><small>${xp} XP · Level ${l.level}</small></div><div class="bar"><span style="width:${l.into}%"></span></div></div>`}).join("");
+ let days=Object.keys(state.daily).filter(k=>state.daily[k].done?.length).length,missionsDone=Object.values(state.daily).reduce((n,r)=>n+(r.done?.length||0),0);
+ let badges=[];if(state.xp>=100)badges.push("First 100 XP");if(state.xp>=500)badges.push("500 XP milestone");if(days>=7)badges.push("Seven active days");if(state.history.length>=20)badges.push("20 logged actions");
+ document.getElementById("achievementList").innerHTML=badges.length?badges.map(x=>`<span class="tag">🏅 ${x}</span>`).join(" "):"<p class='empty'>Milestones unlock as you build a real activity record.</p>";
+ document.getElementById("weeklyChallenge").innerHTML=`Complete 10 meaningful activities this week. <b>${Math.min(10,state.history.filter(h=>{let d=(new Date().getTime()-new Date(h.date+"T00:00:00").getTime())/86400000;return d>=0&&d<7}).length)}/10</b>`;
+ document.getElementById("bossMission").innerHTML=`<b>Weekly Boss: The Consistency Test</b><p class="muted">Complete at least one planned learning or fitness activity on 4 different days this week. Current active days: ${Math.min(4,new Set(state.history.filter(h=>(Date.now()-new Date(h.date+"T00:00:00"))<7*86400000).map(h=>h.date)).size)}/4.</p>`;
+ document.getElementById("activityHistory").innerHTML=state.history.slice(0,12).map(h=>`<div class="listrow"><span>${escapeHTML(h.label)}<br><small>${escapeHTML(h.date)} · ${escapeHTML(h.kind)}</small></span><b class="xp">+${h.xp} XP</b></div>`).join("")||"<p class='empty'>No activity logged yet.</p>";
+}
+function monthlyReport(){let prefix=dayKey().slice(0,7),arr=state.history.filter(h=>h.date.startsWith(prefix)),xp=arr.reduce((n,h)=>n+h.xp,0),days=new Set(arr.map(h=>h.date)).size;document.getElementById("monthlyReport").innerHTML=`<p><b>${prefix}</b>: ${arr.length} activities · ${xp} XP · ${days} active days.</p>`;}
+function showMore(which){let box=document.getElementById("moreDetail");box.classList.remove("hidden");
+ if(which==="targets"){box.innerHTML=`<h2>Targets & aims</h2><label>Long-term aim</label><textarea id="aimInput">${escapeHTML(state.aim)}</textarea><button class="primary" onclick="state.aim=document.getElementById('aimInput').value;save();alert('Aim saved')">Save aim</button><h3 style="margin-top:16px">Your targets</h3>${state.targets.map((t,i)=>`<div class="listrow"><span>${escapeHTML(t)}</span><button class="danger" onclick="removeTarget(${i})">Remove</button></div>`).join("")}<label style="display:block;margin-top:12px">Add a target</label><input id="newTarget" placeholder="e.g. Revise Python for 30 minutes"><button onclick="addTarget()">Add target</button>`;}
+ if(which==="calendar"){box.innerHTML=`<h2>Calendar & notes</h2><div class="row"><button onclick="monthMove(-1)">←</button><h3 id="monthLabel" style="text-align:center"></h3><button onclick="monthMove(1)">→</button></div><div class="calendar" id="calendarGrid"></div><p id="selectedLabel" class="muted"></p><label>Note for selected date</label><textarea id="calendarNote" placeholder="Plan, reflection or reminder"></textarea><button class="primary" onclick="saveCalendarNote()">Save note</button>`;renderCalendar();}
+ if(which==="evaluation"){let ev=state.evaluations[dayKey()]||{};box.innerHTML=`<h2>Daily evaluation</h2><p class="muted">Be honest. A useful review identifies what happened, not what you wish happened.</p><div class="field"><label>What did you complete today?</label><textarea id="evDone">${escapeHTML(ev.done||"")}</textarea></div><div class="field"><label>What did you learn?</label><textarea id="evLearn">${escapeHTML(ev.learn||"")}</textarea></div><div class="field"><label>What needs improvement?</label><textarea id="evImprove">${escapeHTML(ev.improve||"")}</textarea></div><div class="field"><label>Tomorrow's top priority</label><input id="evTomorrow" value="${escapeHTML(ev.tomorrow||"")}"></div><button class="primary" onclick="saveEvaluation()">Save evaluation</button>`;}
+ if(which==="profile"){box.innerHTML=`<h2>Player profile</h2><div class="field"><label>Display name</label><input id="profileName" value="${escapeHTML(state.name)}"></div><div class="field"><label>Identity statement</label><textarea id="profileAim">${escapeHTML(state.aim)}</textarea></div><button class="primary" onclick="state.name=document.getElementById('profileName').value.trim()||'Player';state.aim=document.getElementById('profileAim').value;save();renderHome();alert('Profile saved')">Save profile</button><p class="muted">RISO currently stores data in this browser on this device. It does not sync between devices.</p>`;}
+ if(which==="data"){box.innerHTML=`<h2>Backup & restore</h2><p class="muted">Export a backup regularly. Restoring replaces the current RISO V2 data, so keep a backup first.</p><button class="primary" onclick="exportData()">Export backup (.json)</button><div class="field"><label>Restore from a RISO JSON backup</label><input id="restoreFile" type="file" accept="application/json,.json"></div><button class="danger" onclick="restoreData()">Restore selected backup</button><p class="muted">The original V1.2 storage key is left untouched as a safety copy.</p>`;}
+ box.scrollIntoView({behavior:"smooth",block:"start"});}
+function addTarget(){let x=document.getElementById("newTarget").value.trim();if(!x)return;state.targets.push(x);save();showMore("targets");}
+function removeTarget(i){if(!confirm("Remove this target?"))return;state.targets.splice(i,1);save();showMore("targets");}
+function renderCalendar(){let y=selectedDate.getFullYear(),m=selectedDate.getMonth(),first=new Date(y,m,1).getDay(),last=new Date(y,m+1,0).getDate();document.getElementById("monthLabel").textContent=selectedDate.toLocaleDateString([],{month:"long",year:"numeric"});let h=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].map(x=>`<div class="dayname">${x}</div>`).join("");for(let i=0;i<first;i++)h+='<div class="day empty"></div>';for(let d=1;d<=last;d++){let dt=new Date(y,m,d),key=dayKey(dt);h+=`<button class="day ${key===dayKey()?"today":""} ${key===dayKey(selectedDate)?"selected":""}" onclick="selectCalendarDate(${y},${m},${d})">${d}</button>`;}document.getElementById("calendarGrid").innerHTML=h;document.getElementById("selectedLabel").textContent=selectedDate.toLocaleDateString([],{weekday:"long",day:"numeric",month:"long",year:"numeric"});document.getElementById("calendarNote").value=state.notes[dayKey(selectedDate)]||"";}
+function monthMove(n){selectedDate=new Date(selectedDate.getFullYear(),selectedDate.getMonth()+n,1);renderCalendar();}
+function selectCalendarDate(y,m,d){selectedDate=new Date(y,m,d);renderCalendar();}
+function saveCalendarNote(){state.notes[dayKey(selectedDate)]=document.getElementById("calendarNote").value;save();alert("Calendar note saved.");}
+function saveEvaluation(){state.evaluations[dayKey()]={done:document.getElementById("evDone").value,learn:document.getElementById("evLearn").value,improve:document.getElementById("evImprove").value,tomorrow:document.getElementById("evTomorrow").value,savedAt:new Date().toISOString()};save();alert("Daily evaluation saved.");}
+function exportData(){let blob=new Blob([JSON.stringify(state,null,2)],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=`riso-backup-${dayKey()}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
+function restoreData(){let f=document.getElementById("restoreFile").files[0];if(!f){alert("Choose a backup file first.");return;}if(!confirm("This replaces your current RISO V2 data. Continue?"))return;let reader=new FileReader();reader.onload=()=>{let obj=safeParse(reader.result);if(!obj||obj.version!==2){alert("This is not a valid RISO V2 backup.");return;}state=normalize(obj);save();renderAll();alert("Backup restored.");};reader.readAsText(f);}
+function updateStreak(){let today=dayKey();if(!state.lastDay){state.lastDay=today;save();return;}if(state.lastDay===today)return;let prev=new Date();prev.setDate(prev.getDate()-1);let prevKey=dayKey(prev);let yesterday=state.daily[prevKey];if(yesterday&&(yesterday.done?.length||yesterday.sessions?.length))state.streak=(state.streak||0)+1;else if(state.lastDay!==prevKey)state.streak=0;state.lastDay=today;save();}
+function init(){updateStreak();tick();setInterval(tick,1000);renderAll();if("serviceWorker" in navigator&&location.protocol!=="file:")navigator.serviceWorker.register("./sw.js").catch(()=>{});}
+init();
+</script>
+</body></html>
